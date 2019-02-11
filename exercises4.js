@@ -1,5 +1,6 @@
 function cariModus(arr) {
-    // you can only write your code here!
+    
+    
   }
   
   // TEST CASES
