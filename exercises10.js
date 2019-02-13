@@ -1,6 +1,6 @@
 function changeMe(arr) {
     // var object = { firstName:
-       
+      //  console.log(arr.length)
     // }
     if(arr.length===0){
       return ""
@@ -22,7 +22,7 @@ function changeMe(arr) {
 
   
   // TEST CASES
-  // changeMe([['Christ', 'Evans', 'Male', 1982], ['Robert', 'Downey', 'Male']]); // 1. Christ Evans:
+  changeMe([['Christ', 'Evans', 'Male', 1982], ['Robert', 'Downey', 'Male']]); // 1. Christ Evans:
   // { firstName: 'Christ',
   //   lastName: 'Evans',
   //   gender: 'Male',
@@ -32,4 +32,4 @@ function changeMe(arr) {
   //   lastName: 'Downey',
   //   gender: 'Male',
   //   age: 'Invalid Birth Year' }
-  changeMe([]); // ""
+  console.log(changeMe([])); // ""
