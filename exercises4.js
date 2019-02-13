@@ -1,22 +1,48 @@
 function cariModus(arr) {
-    var modus = -1;
-    var counterMax = 1;
+    var numUnique = [];
     for(var i = 0; i < arr.length; i++){
-        var count = 1;//1
-        for(var j = i+1; j < arr.length; j++){
-            if(arr[i]===arr[j]){
-                count++
+        var flag = true;
+        for(var j = 0; j < numUnique.length; j++){
+            if(numUnique[j]===arr[i]){
+                flag = false;
+            }
+            
+        }
+        if(flag=== true){
+            numUnique.push(arr[i]);
+        }
+    }
+    // console.log(numUnique);
+    var counts = [];
+    for(var k = 0; k < numUnique.length; k++){
+        var counter = 0;
+        for(var l = 0; l < arr.length; l++){
+            if(numUnique[k]===arr[l]){
+                counter++
             }
         }
-        if(count>counterMax){
-            counterMax = count;
-            modus = arr[i];
+        counts.push(counter);
+    }
+    // console.log(numUnique);
+    // console.log(counts);
+    var maxCounter = counts[0];
+    var maxValue = numUnique[0];
+    for(var m = 0; m < counts.length; m++){
+        if(counts[m]>maxCounter){
+            maxCounter = counts[m];
+            maxValue = numUnique[m];
         }
     }
-    if(counterMax===arr.length){
-        modus = -1
+    // console.log(maxCounter, maxValue);
+    //kondisi jawaban
+    if(maxCounter===1){
+        return -1
+    } else if(maxCounter===arr.length){
+        return -1;
+    } else {
+        return maxValue;
     }
-    return modus;
+    // return numUnique
   }
   
   // TEST CASES
