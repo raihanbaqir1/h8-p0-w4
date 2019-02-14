@@ -1,31 +1,28 @@
 function angkaPrima(angka){
-    // var result = false;
-    // var pembagi = 235;
-    if(angka===2||angka===3){
-        return true;
-    }
-    if(angka%1===0 && angka%angka===0){
-        if(angka%2===0 && angka%3===0){
-            return false;
-        } else if(angka%5===0){
+    var pembagi = 2;
+    
+    var flag = true;
+    while(pembagi < angka){
+        if(angka%pembagi===0){
             return false;
         }
-        else if(angka%angka===0 && angka%3===0){
-            return false;
-        } else if(angka%angka===0 && angka%2===0){
-            return false;
-        } else{
-            return true;
-        }
+        pembagi = pembagi + 1;
+        // if(pembagi > angka){
+        //     flag = false;
+        // }
+           
+      
     }
-    //  return result;
+    return flag;
+    
 }
     
 
 // TEST CASES
-// console.log(angkaPrima(2));
+console.log(angkaPrima(2)); //true
 console.log(angkaPrima(3)); // true
 console.log(angkaPrima(7)); // true
 console.log(angkaPrima(6)); // false
 console.log(angkaPrima(23)); // true
 console.log(angkaPrima(25)); // false
+console.log(angkaPrima(49)); //false
